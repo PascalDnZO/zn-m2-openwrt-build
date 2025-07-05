@@ -101,6 +101,11 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
+    - name: Debug via SSH (tmate)
+      uses: mxschmitt/action-tmate@v3
+      with:
+        limit-access-to-actor: true
+
     - name: Load custom configuration
       run: |
         set -x
